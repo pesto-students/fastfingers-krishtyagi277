@@ -9,7 +9,7 @@ export default function Header ({showScore = true}) {
 
     useEffect(()=>{
         const id = setInterval(()=>{
-            setScore(() => timeToSecond(getDataFromLocalStorgae("score") * 1000));
+            setScore(() => timeToSecond(getDataFromLocalStorgae("score")));
         }, 100);
        
         return ()=>{
@@ -27,7 +27,7 @@ export default function Header ({showScore = true}) {
 
     return(<header>
         <div className="row">
-            <div className="left-col"><i className="las la-user"></i> PLAYER_NAME_{playerName}</div>
+            <div className="left-col"><i className="las la-user"></i> PLAYER_NAME: {playerName}</div>
             <div className="right-col">fast fingers</div>
         </div>
         <div className="row">
