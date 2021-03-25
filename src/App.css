@@ -105,7 +105,7 @@ background-image: url("/background.07e8ff90.png"),linear-gradient(180deg
     }
 
     .score-detail-section{
-      height: 420px;
+      height: 440px;
     }
     .game-section{
       flex-direction: column-reverse;
