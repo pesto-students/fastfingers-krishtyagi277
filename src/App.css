@@ -41,6 +41,62 @@ background-image: url("/background.07e8ff90.png"),linear-gradient(180deg
 .game-high-score{
   font-size: 38px;
 }
+.game-high-png img{
+  margin:0px;
+  width: 200px;
+  -moz-animation: blink normal 2s infinite ease-in-out; /* Firefox */
+  -webkit-animation: blink normal 2s infinite ease-in-out; /* Webkit */
+  -ms-animation: blink normal 2s infinite ease-in-out; /* IE */
+  animation: blink normal 2s infinite ease-in-out; /* Opera and prob css3 final iteration */
+}
+
+@-moz-keyframes blink {
+  0% {
+      opacity:1;
+  }
+  50% {
+      opacity:0;
+  }
+  100% {
+      opacity:1;
+  }
+} 
+
+@-webkit-keyframes blink {
+  0% {
+      opacity:1;
+  }
+  50% {
+      opacity:0;
+  }
+  100% {
+      opacity:1;
+  }
+}
+/* IE */
+@-ms-keyframes blink {
+  0% {
+      opacity:1;
+  }
+  50% {
+      opacity:0;
+  }
+  100% {
+      opacity:1;
+  }
+} 
+/* Opera and prob css3 final iteration */
+@keyframes blink {
+  0% {
+      opacity:1;
+  }
+  50% {
+      opacity:0;
+  }
+  100% {
+      opacity:1;
+  }
+} 
 
 @media only screen and (max-width: 600px) {
   .App{
@@ -53,5 +109,9 @@ background-image: url("/background.07e8ff90.png"),linear-gradient(180deg
     .game-section{
       flex-direction: column-reverse;
       height:100%;
+    }
+    .game-number, .game-time{
+      font-size: 38px;
+      font-weight: 400;
     }
 }

@@ -107,3 +107,20 @@ export function getDifficultyLevel() {
         return user.difficulty.level;
     }
 }
+
+export function timeToMinute(time) {
+    time = time * 1000;
+    let diffInHrs = time / 3600000;
+    let hh = Math.floor(diffInHrs);
+  
+    let diffInMin = (diffInHrs - hh) * 60;
+    let mm = Math.floor(diffInMin);
+  
+    let diffInSec = (diffInMin - mm) * 60;
+    let ss = Math.floor(diffInSec);
+  
+    let formattedMM = mm.toString().padStart(2, "0");
+    let formattedSS = ss.toString().padStart(2, "0");
+  
+    return `${formattedMM}:${formattedSS}`;
+}

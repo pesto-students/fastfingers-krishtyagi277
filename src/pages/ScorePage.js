@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/header/Header";
 import Button from "../components/button/Button";
-import { getDataFromLocalStorgae, timeToSecond,  saveCurrentGameScore, getHighScore} from "../utilities/utils";
+import { getDataFromLocalStorgae, timeToMinute,  saveCurrentGameScore, getHighScore} from "../utilities/utils";
 
 export default function ScorePage ({changeScreen}) {
     const [score, setScore] = useState(2);
@@ -19,8 +19,9 @@ export default function ScorePage ({changeScreen}) {
         <Header showScore={false}/>
         <div className="score-detail-section">
            <p className="game-number">SCORE : GAME </p>
-           <p className="game-time">{timeToSecond(score)}</p>
+           <p className="game-time">{timeToMinute(score)}</p>
            {newHighScore?<p className="game-high-score">New High Score</p>:""}
+           {newHighScore?<p className="game-high-png"><img src="/highScore.png" alt="high-score"/></p>:""}
            <Button iconClass="las la-redo-alt" btnName="PLAY AGAIN" clickAction={changeScreen} pageName="startPage"/>
         </div>
         <Button btnName="QUIT" clickAction={changeScreen} pageName="startPage"/>
