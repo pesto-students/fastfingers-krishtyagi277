@@ -65,7 +65,7 @@ const  startTimer = ()=> {
     setTimerValue(timeToString(elapsedTime));
     if( elapsedTime === 0) {
       onTimesUp();
-     //gameLost("scorePage");
+     gameLost("scorePage");
     }
     currTime+=10;
     angle -= angle_increment/(1000/10);
