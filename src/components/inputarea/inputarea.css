@@ -55,3 +55,15 @@ height: 50%;
      left: 50px;
 }
 
+@media only screen and (max-width: 600px) {
+  .input-field{
+    width:90%;
+  }
+  #loader-svg{
+    width: 280px;
+    height: 280px;
+    position: relative;
+    left: 40px;
+    top: 50px;
+}
+}

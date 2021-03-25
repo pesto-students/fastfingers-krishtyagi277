@@ -41,3 +41,17 @@ background-image: url("/background.07e8ff90.png"),linear-gradient(180deg
 .game-high-score{
   font-size: 38px;
 }
+
+@media only screen and (max-width: 600px) {
+  .App{
+    height:100%;
+    }
+
+    .score-detail-section{
+      height: 420px;
+    }
+    .game-section{
+      flex-direction: column-reverse;
+      height:100%;
+    }
+}

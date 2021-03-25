@@ -48,7 +48,7 @@ export function saveUserToLocalStorage(key, data) {
             userObj.difficulty = data.difficulty;
             userObj.gameCount += data.gameCount;
             localStorage.setItem(key, JSON.stringify(userObj));
-    
+        
         } else{
             data.gameCount = 1;
             localStorage.setItem(key, JSON.stringify(data));
@@ -88,4 +88,22 @@ export async function getHighScore() {
 
 export function timeToSecond(time) {
    return `${time}:00`;
+}
+
+
+export function setDifficultyLevel(level, factor) {
+    if(localStorage.getItem("user")) {
+        const userObj = JSON.parse(localStorage.getItem("user"));
+        userObj.difficulty.level = level;
+        userObj.difficulty.factor = factor
+
+        localStorage.setItem("user", JSON.stringify(userObj));
+    }
+}
+
+export function getDifficultyLevel() {
+    if(localStorage.getItem("user")) {
+        const user = JSON.parse(localStorage.getItem("user"));
+        return user.difficulty.level;
+    }
 }

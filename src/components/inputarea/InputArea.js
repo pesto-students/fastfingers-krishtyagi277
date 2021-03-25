@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./inputarea.css";
 import data from "./dictionary.json";
-import { timeToString } from "../../utilities/utils";
+import { timeToString, setDifficultyLevel } from "../../utilities/utils";
 
 export default function InputArea ({factor = 1, gameLost}) {
    const [wordToType, setWordToType] = useState("");
@@ -14,6 +14,8 @@ export default function InputArea ({factor = 1, gameLost}) {
    const [timerValue, setTimerValue] = useState("00:00");
    const [timeLimit, setTimeLimit] = useState(typingTime * 1000);
    const [stroke, setStroke] = useState("#4DD637");
+   const [callMediumLevelFn, setCallMediumLevelFn] =  useState(true); 
+   const [callHardLevelFn, setCallHardLevelFn] =  useState(true); 
    let timerInterval = null;
    let angle = 361;
    let angle_increment  = 360/(timeLimit/1000);
@@ -65,7 +67,7 @@ const  startTimer = ()=> {
     setTimerValue(timeToString(elapsedTime));
     if( elapsedTime === 0) {
       onTimesUp();
-     gameLost("scorePage");
+    gameLost("scorePage");
     }
     currTime+=10;
     angle -= angle_increment/(1000/10);
@@ -130,11 +132,15 @@ useEffect(()=>{
   async function fillWords(){
     await fillWordsArray();
   }
-  if(difficultyFactor >= 1.5 && difficultyFactor < 2) {
-     fillWords();
+  if(difficultyFactor >= 1.5 && difficultyFactor < 2 && callMediumLevelFn) {
+    fillWords();
+     setDifficultyLevel("MEDIUM", 1.5);
+     setCallMediumLevelFn(false);
   }
-  if(difficultyFactor >= 2) {
+  else if(difficultyFactor >= 2 && callHardLevelFn) {
    fillWords();
+   setDifficultyLevel("HARD", 2);
+   setCallHardLevelFn(false);
   }
   
 // eslint-disable-next-line react-hooks/exhaustive-deps
