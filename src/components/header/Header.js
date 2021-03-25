@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
-import { timeToString, getDataFromLocalStorgae } from "../../utilities/utils"
+import { timeToSecond, getDataFromLocalStorgae } from "../../utilities/utils"
 
 export default function Header ({showScore = true}) {
     const [score, setScore] = useState("00:00");
@@ -9,7 +9,7 @@ export default function Header ({showScore = true}) {
 
     useEffect(()=>{
         const id = setInterval(()=>{
-            setScore(() => timeToString(getDataFromLocalStorgae("score") * 1000));
+            setScore(() => timeToSecond(getDataFromLocalStorgae("score") * 1000));
         }, 100);
        
         return ()=>{
