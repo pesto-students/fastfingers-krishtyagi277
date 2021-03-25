@@ -20,7 +20,7 @@ export default function InputArea ({factor = 1, gameLost}) {
    const inputFieldRef = useRef(null);
 
    const handleOnInputValue = (e) => {
-     setWordToType(e.target.value);
+     setWordToType(e.target.value.toUpperCase());
   }
 
     const fillWordsArray = () => {
@@ -103,18 +103,12 @@ useEffect(()=>{
     const wordToRender = wordsArray[getRandomInt(0, wordsArray.length-1)]
     calculateTypingTime(wordToRender);
     setDifficultyFactor(difficultyFactor + 0.01);
-    setDisplayWord(wordToRender);
+    setDisplayWord(wordToRender.toUpperCase());
     setWordToType("");
   }
   
  // eslint-disable-next-line react-hooks/exhaustive-deps
  }, [wordToType]);
-
-// useEffect(()=>{
-//   setDisplayWord(wordsArray[0]);
-//   calculateTypingTime(displayWord);
-//  // eslint-disable-next-line react-hooks/exhaustive-deps
-//  }, [wordsArray])
 
 useEffect(()=>{
   setTimeLimit(typingTime * 1000);

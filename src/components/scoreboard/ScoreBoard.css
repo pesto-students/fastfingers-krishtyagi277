@@ -21,7 +21,7 @@
  border-radius: 5px; 
  margin-top: 20px;  
  margin-left: 20px;
- overflow:auto ;
+ overflow:scroll;
 }
 .game-score{
  color:white;
@@ -34,3 +34,22 @@
     font-size: 20px;
 }
 
+/* width */
+.score-board::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  .score-board::-webkit-scrollbar-track {
+    background: transparent;
+  }
+   
+  /* Handle */
+  .score-board::-webkit-scrollbar-thumb {
+    background:#063c47;
+  }
+  
+  /* Handle on hover */
+  .score-board::-webkit-scrollbar-thumb:hover {
+    background:#063c47;
+  }
