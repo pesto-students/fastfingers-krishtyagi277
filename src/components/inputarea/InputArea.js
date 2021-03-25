@@ -9,7 +9,7 @@ export default function InputArea ({factor = 1, gameLost}) {
    const [wordsArray, setWordsArray] = useState([data[0]]);
    const [typingTime, setTypingTime] = useState(2);
    const [difficultyFactor, setDifficultyFactor] = useState(factor);
-   const [currentScore, setCurrentScore] = useState(2);
+   const [currentScore, setCurrentScore] = useState(-2);
    const [strokeDasharrayValue, setStrokeDasharrayValue] = useState("361, 361");
    const [timerValue, setTimerValue] = useState("00:00");
    const [timeLimit, setTimeLimit] = useState(typingTime * 1000);
@@ -53,8 +53,7 @@ export default function InputArea ({factor = 1, gameLost}) {
     const timeToType = Math.round( word.length / difficultyFactor);
     await setTypingTime(0);
     setTypingTime(  timeToType > 2 ? timeToType : 2 );
-    setCurrentScore(currentScore+typingTime);
-    localStorage.setItem("score",JSON.stringify(currentScore));
+    
   }
 
 const  startTimer = ()=> {
@@ -113,6 +112,7 @@ useEffect(()=>{
  }, [wordToType]);
 
 useEffect(()=>{
+  setCurrentScore(currentScore+typingTime);
   setTimeLimit(typingTime * 1000);
   return () => {
     onTimesUp();
@@ -146,6 +146,9 @@ useEffect(()=>{
 // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [difficultyFactor]);
 
+useEffect(()=>{
+  localStorage.setItem("score",JSON.stringify(currentScore));
+},[currentScore])
 
 
 return (<div className="game-play-area">
