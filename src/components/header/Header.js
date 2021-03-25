@@ -28,7 +28,7 @@ export default function Header ({showScore = true}) {
 
     return(<header>
         <div className="row">
-            <div className="left-col"><i className="las la-user"></i> PLAYER_NAME: {playerName}</div>
+            <div className="left-col"><i className="las la-user"></i> {playerName}</div>
             <div className="right-col">fast fingers</div>
         </div>
         <div className="row">
