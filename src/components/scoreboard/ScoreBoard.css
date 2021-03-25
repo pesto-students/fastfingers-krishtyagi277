@@ -1,0 +1,36 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+:root {
+--orange:#ff5155;
+--seagreen:#97A1A4;
+}
+
+.score-board{
+ width:14%;
+ height: 80%;
+ min-height: 280px;
+ padding:20px;
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ border:2px solid var(--orange);
+ border-radius: 5px; 
+ margin-top: 20px;  
+ margin-left: 20px;
+ overflow:auto ;
+}
+.game-score{
+ color:white;
+ font-size: 18px;
+ margin:6px 0px;
+}
+
+.scoreboard-heading{
+    color:var(--orange);
+    font-size: 20px;
+}
+

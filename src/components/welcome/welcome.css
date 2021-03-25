@@ -1,0 +1,122 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+:root {
+    --orange:#ff5155;
+    --seagreen:#97A1A4;
+  }
+
+.start-page{
+  margin:0px auto;
+  padding:40px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--orange);
+}
+.icon-keyboard{
+    margin:0px;
+    padding: 0;
+    font-size: 128px;
+    font-weight: 600;
+    color: var(--orange);
+}
+
+.heading{
+    font-size: 48px;
+    line-height: 1.2;
+}
+.line { 
+    width:60px;
+    display: inline-block;
+    border-bottom: 2px solid var(--orange); 
+    margin: auto 6px; 
+} 
+
+.ultimate-title{
+  font-size: 18px;
+}
+.ultimate-title div{
+    display: inline-block;
+  }
+.form-fields{
+    margin:20px 0px;
+}
+.form-item{
+text-align: center;
+padding:12px 0px;
+}
+
+input[name="playername"]{
+    color: black;
+    width: 94%;
+    padding:10px 32px;
+    outline: none;
+    border:none;
+    font-size: 26px;
+    border-radius: 5px;
+    background-color: var(--seagreen);
+}
+input[name="difficulty"]{
+    color: var(--seagreen);
+    width: 94%;
+    padding:10px 22px;
+    outline: none;
+    border:1px solid var(--seagreen);
+    font-size: 22px;
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    left:10px;
+    
+}
+
+input[type="text"]::placeholder{
+    color: #1A363B;
+}
+
+.form-item:nth-of-type(2) > i{
+  position: relative;
+  right: 28px;
+  color:var(--seagreen);
+  cursor: pointer;
+}
+
+.difficulty-menu{
+    width: 94%;
+    border-radius: 0px 0px 5px 5px;
+    cursor: pointer;
+    padding:10px;
+    text-align: left;
+    background-color: var(--seagreen);
+    color:  #1A363B;
+    position: relative;
+    left:10px;
+}
+
+.difficulty-menu h4{
+  margin:8px 0px;
+}
+
+.btn{
+    border:0px;
+    outline: none;
+    font-size: 28px;
+    color: var(--orange);
+    cursor: pointer;
+    padding: 20px 22px;
+}
+
+.btn-transparent{
+    background: transparent;
+}
+.validation-message{
+    color: red;
+    font-size: 14px;
+    text-align: left;
+    padding: 4px 0px 0px 10px;
+}

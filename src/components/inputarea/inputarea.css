@@ -1,0 +1,57 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+:root {
+    --orange:#ff5155;
+    --seagreen:#97A1A4;
+  }
+.game-play-area{
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.game-play-input-area{
+text-align: center;
+height: 50%;
+}
+.word-to-type{
+    font-size: 48px;
+    color: white;
+}
+
+.input-field{
+    color: black;
+    width: 480px;
+    margin-top:20px;
+    padding:10px 10px;
+    outline: none;
+    border:none;
+    font-size: 26px;
+    border-radius: 5px;
+    background-color: var(--seagreen);
+}
+
+.timer{
+    height:260px;
+     width:100%;
+     text-align: center;
+   
+   }
+   
+   #timer-text{
+     font-size: 28px;
+     color:"white";
+   }
+   .timer-color{
+     color: azure;
+}
+#loader-svg{
+     width: 400px;
+     height: 400px;
+     position: relative;
+     left: 50px;
+}
+

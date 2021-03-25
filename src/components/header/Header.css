@@ -1,0 +1,21 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+:root {
+--orange:#ff5155;
+--seagreen:#97A1A4;
+}
+
+.row{
+    color: var(--orange);
+    width:95%;
+    padding:18px 20px 2px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 28px;
+}
+
+
