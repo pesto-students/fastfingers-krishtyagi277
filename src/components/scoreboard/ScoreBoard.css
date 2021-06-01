@@ -1,0 +1,66 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+:root {
+--orange:#ff5155;
+--seagreen:#97A1A4;
+}
+
+.score-board{
+ width:14%;
+ height: 80%;
+ min-height: 280px;
+ padding:20px;
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ border:2px solid var(--orange);
+ border-radius: 5px; 
+ margin-top: 20px;  
+ margin-left: 20px;
+ overflow:scroll;
+}
+.game-score{
+ color:white;
+ font-size: 18px;
+ margin:6px 0px;
+}
+
+.scoreboard-heading{
+    color:var(--orange);
+    font-size: 20px;
+}
+
+/* width */
+.score-board::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  .score-board::-webkit-scrollbar-track {
+    background: transparent;
+  }
+   
+  /* Handle */
+  .score-board::-webkit-scrollbar-thumb {
+    background:#063c47;
+  }
+  
+  /* Handle on hover */
+  .score-board::-webkit-scrollbar-thumb:hover {
+    background:#063c47;
+  }
+  .red{
+    color:red;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .score-board{
+        width:80%;
+        height: 340px;
+        margin:20px auto;
+       }
+  }

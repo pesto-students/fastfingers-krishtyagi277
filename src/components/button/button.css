@@ -1,0 +1,16 @@
+:root {
+    --orange:#ff5155;
+    --seagreen:#97A1A4;
+}
+.btn{
+    border:0px;
+    outline: none;
+    font-size: 28px;
+    color: var(--orange);
+    cursor: pointer;
+    padding: 20px 22px;
+}
+
+.btn-transparent{
+    background: transparent;
+}
